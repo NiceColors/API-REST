@@ -11,7 +11,7 @@
 
 ### Funcionalidades
 - [x] Crud básico (add, remover e editar)
-- [ ] Implementar Auth (JWT/Access-token/Refresh-token)
+- [x] Implementar Auth (JWT/Access-token/Refresh-token)
 - [ ] Cookie support
 - [ ] Request validation
 - [ ] API documentation (Swagger)
