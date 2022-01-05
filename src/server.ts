@@ -2,6 +2,8 @@ import express from 'express';
 import * as bodyParser from "body-parser";
 import { hello } from './routes/hello';
 import dotenv from 'dotenv';
+import './app/database/connect';
+
 dotenv.config()
 
 const app = express();
