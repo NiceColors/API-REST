@@ -7,12 +7,11 @@
 
 - [x] Criar template
 - [x] Add TypeScript!
-
 - [x] Fazer deploy no Heroku
 
 ### Funcionalidades
-- [ ] Crud básico (add, remover e editar)
-- [ ] Implementar Auth (JWT/Access-token/Refresh-token)
+- [x] Crud básico (add, remover e editar)
+- [x] Implementar Auth (JWT/Access-token/Refresh-token)
 - [ ] Cookie support
 - [ ] Request validation
 - [ ] API documentation (Swagger)
