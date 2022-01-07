@@ -10,9 +10,7 @@ const router = Router();
 app.use(express.json());
 
 router.post("/", userController.create);
-router.get("/", userController.index);
-// router.get("/", authMiddleware, userController.index);
-
+router.get("/", authMiddleware, userController.index);
 router.get("/login", authController.login);
 
 export const hello: Router = router;

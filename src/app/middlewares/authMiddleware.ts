@@ -12,21 +12,17 @@ export default function authMiddleware(
   res: Response,
   next: NextFunction
 ) {
-  const { authorization } = req.headers;
-  if (!authorization) {
-    return res.status(401).json({ error: "Token not provided" });
+  const token =
+    req.body.token || req.query.token || req.headers["x-access-token"];
+
+  if (!token) {
+    return res.status(403).send("A token is required for authentication");
   }
-
-  const token = authorization.replace("Bearer", "").trim();
-
   try {
-    const data = jwt.verify(token, "secret");
-    const { id } = data as TokenPayLoad;
-
-    req.userId = id;
-    
-    return next();
-  } catch {
-    return res.status(401).json({ error: "Token not provided" });
+    const decoded = jwt.verify(token, 'secret');
+    req.body.user = decoded;
+  } catch (err) {
+    return res.status(401).send("Invalid Token");
   }
+  return next();
 }
